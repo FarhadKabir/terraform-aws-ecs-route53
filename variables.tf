@@ -42,6 +42,11 @@ variable "hosted_zone_name" {
    description = "Hosted zone name"
 }
 
+variable "record_name" {
+   type        = string
+   description = "Complete name for record that needs to be added in Route53"
+}
+
 variable "db_port" {
    type        = string
    description = "Port for Postgres RDS Database"
