@@ -6,7 +6,7 @@ resource "aws_alb" "main" {
 }
 
 resource "aws_alb_target_group" "app" {
-  name        = "alb-TG"
+  name        = "alb-tg"
   port        = "80"
   protocol    = "HTTP"
   vpc_id      = aws_vpc.main.id
@@ -29,7 +29,7 @@ data "aws_caller_identity" "current" {}
 
 ### ECS
 resource "aws_iam_role" "ecs_task_role" {
-  name = "EBPCloud-${var.initials}-ECS-Role"
+  name = "ECS-Task-Role"
 
   assume_role_policy = <<EOF
 {
@@ -48,7 +48,8 @@ resource "aws_iam_role" "ecs_task_role" {
 EOF
 }
 
-resource "aws_iam_role_policy" "ecs_task_policy" {                                                                                                                        name = "EBPCloud-${var.initials}-ECS-Policy"
+resource "aws_iam_role_policy" "ecs_task_policy" {
+  name = "ECS-Task-Policy"
   role = aws_iam_role.ecs_task_role.id
   policy = <<EOF
 {
@@ -64,7 +65,8 @@ resource "aws_iam_role_policy" "ecs_task_policy" {                              
                 "logs:CreateLogStream",
                 "logs:PutLogEvents"
             ],
-            "Resource": "*"                                                                                                                                                     }
+            "Resource": "*"
+        }
     ]
 }
 EOF
