@@ -66,3 +66,13 @@ variable "db_name" {
    type        = string
    description = "Name for Postgres database"
 }
+
+variable "ecr_repo_name" {
+   type        = string
+   description = "name for ECR repository"
+}
+
+variable "docker_file" {
+   type        = string
+   description = "Path for your docker file"
+}

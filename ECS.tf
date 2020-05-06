@@ -87,7 +87,7 @@ resource "aws_ecs_task_definition" "app" {
 [
   {
     "cpu": ${var.fargate_cpu},
-    "image": "${aws_ecr_repository.ebp_cloud_image.repository_url}:latest",
+    "image": "${aws_ecr_repository.ecr_repo.repository_url}:latest",
     "memory": ${var.fargate_memory},
     "name": "app",
     "networkMode": "awsvpc",
@@ -101,7 +101,7 @@ resource "aws_ecs_task_definition" "app" {
 ]
 DEFINITION
 
-  depends_on = [null_resource.push_image_ecr, aws_db_instance.ebp_rds]
+  depends_on = [null_resource.push_image_ecr]
 }
 
 resource "aws_ecs_service" "main" {
