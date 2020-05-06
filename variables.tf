@@ -26,7 +26,7 @@ variable "app_port" {
 }
 
 variable "app_count" {
-  description = "Number of docker containers to run"
+  description = "Number of instances of task definition i.e tasks, to keep running"
 }
 
 variable "fargate_cpu" {
@@ -45,26 +45,6 @@ variable "hosted_zone_name" {
 variable "record_name" {
    type        = string
    description = "Complete name for record that needs to be added in Route53"
-}
-
-variable "db_port" {
-   type        = string
-   description = "Port for Postgres RDS Database"
-}
-
-variable "db_username" {
-   type        = string
-   description = "Username for Postgres database"
-}
-
-variable "db_password" {
-   type        = string
-   description = "Password for Postgres database"
-}
-
-variable "db_name" {
-   type        = string
-   description = "Name for Postgres database"
 }
 
 variable "ecr_repo_name" {
