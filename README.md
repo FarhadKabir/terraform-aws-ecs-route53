@@ -15,4 +15,4 @@ module "terraformecs" {
   fargate_memory   = "512"                        //memory requirement for ECS Fargate
 }
 ```
-This will create a docker image "app_image" and upload it to ECR repository of same name. and then run a single task and server the application on url "test.yourdomain.com"
+This will create a docker image *"app_image"* and upload it to ECR repository of same name. and then run a single task and server the application on url *"test.yourdomain.com"*
