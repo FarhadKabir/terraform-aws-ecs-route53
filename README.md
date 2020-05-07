@@ -1,9 +1,9 @@
-# terraform-aws-ecs
-Terraform module that helps deploy a containerized application on AWS ECS (Elastic Container Service), and make it available over Route53 record
+# Deploy Containerized Application with Terraform
+Terraform module that helps deploy a containerized application on AWS ECS (Elastic Container Service), and make it available over Route53 record.
 ## Example Usage
 ```
 module "terraformecs" {
-  source           = "github.com/FarhadKabir/terraform-ecs"
+  source           = "github.com/FarhadKabir/terraform-aws-ecs-route53"
   aws_region       = "eu-west-1"
   ecr_repo_name    = "app_image"
   docker_file      = "path_to_dockerfile_folder"
